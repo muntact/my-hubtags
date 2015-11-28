@@ -1,5 +1,5 @@
 import React from 'react'
-require('./styles/main.styl')
+require('./styles/main.scss')
 
 const Hello = React.createClass({
   render () {
@@ -7,4 +7,4 @@ const Hello = React.createClass({
   }
 })
 
-React.render(<Hello name="henrik"/>, document.body)
+React.render(<Hello name="Murray"/>, document.body)
