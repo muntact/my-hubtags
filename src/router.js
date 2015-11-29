@@ -1,6 +1,8 @@
 import Router from 'ampersand-router';
 import React from 'react';
 
+import Layout from './Layout';
+
 import PublicPage from './pages/public';
 import ReposPage from './pages/repos';
 
@@ -10,12 +12,24 @@ export default Router.extend({
     'repos': 'repos',
   },
 
+  renderPage(page, opts = {layout: true}){
+    if (opts.layout) {
+      page = (
+        <Layout>
+          {page}
+        </Layout>
+      );
+    }
+
+    React.render(page, document.body);
+  },
+
   public() {
-    React.render(<PublicPage/>, document.body);
+    this.renderPage(<PublicPage/>, {layout: false});
   },
 
   repos() {
-    React.render(<ReposPage/>, document.body);
+    this.renderPage(<ReposPage/>);
   },
 
 })
