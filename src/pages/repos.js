@@ -1,15 +1,13 @@
 import React from 'react';
-import ClickWrapper from '../components/ClickWrapper';
+import NavHelper from '../components/nav-helper';
 
 export default React.createClass({
 
   render() {
     return (
-      <ClickWrapper>
-        <div>
-          <h2>Repos</h2>
-        </div>
-      </ClickWrapper>
+      <NavHelper>
+        <h2>Repos</h2>
+      </NavHelper>
     );
   },
 });

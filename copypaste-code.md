@@ -1,9 +1,4 @@
 GitHub auth
-
-```
-'https://github.com/login/oauth/authorize?' + x
-```
-
 ```
 {
   scope: 'user,repo',

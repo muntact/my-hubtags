@@ -1,11 +1,12 @@
+import app from 'ampersand-app';
 import React from 'react';
 import localLinks from 'local-links';
 
 export default React.createClass({
-  onClick(event) {
-    console.log(event.rawEvent);
-    const pathname = localLinks.getLocalPathname(event);
+  displayName: 'NavHelper',
 
+  onClick(event) {
+    const pathname = localLinks.getLocalPathname(event);
     // If the click was on a link with no modifiers, use the router to change our location.
       // ^ only case pathname will not be null.
     if (pathname) {
@@ -16,7 +17,7 @@ export default React.createClass({
 
   render() {
     return (
-      <div onClick={this.onClick}>
+      <div {...this.props} onClick={this.onClick}>
         {this.props.children}
       </div>
     );
