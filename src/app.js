@@ -20,7 +20,7 @@ app.extend({
   },
 });
 
-app.on('local', function() {
+app.on('local', () => {
   console.log(arguments);
 });
 

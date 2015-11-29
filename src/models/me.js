@@ -1,6 +1,8 @@
 import Model from 'ampersand-model';
 
 export default Model.extend({
+  url: 'https://api.github.com/user',
+
   initialize () {
     this.token = window.localStorage.token;
     this.on('change:token', this.onTokenChange);
@@ -17,6 +19,16 @@ export default Model.extend({
 
   onTokenChange() {
     window.localStorage.token = this.token;
+  },
+
+  ajaxConfig() {
+    console.log(this.token);
+
+    return {
+      headers: {
+        Authorization: 'token ' + this.token
+      }
+    };
   },
 
 });
